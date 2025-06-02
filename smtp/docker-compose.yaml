@@ -1,0 +1,8 @@
+services:
+  mail:
+    build:
+      context: .
+    ports:
+      - 25:25
+    volumes:
+      - ./smtp-data:/var/mail
