@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  dns:
+    image: ubuntu/bind9:latest
+    container_name: math-spbu-dns
+    ports:
+      - "${DNS_HOST_IP}:${DNS_HOST_PORT}:53/udp"
+      - "${DNS_HOST_IP}:${DNS_HOST_PORT}:53/tcp"
+    volumes:
+      - ./named.conf:/etc/bind/named.conf
+      - ./zonefile.db:/etc/bind/zonefile.db
+    environment:
+      - TZ=UTC
+    restart: unless-stopped

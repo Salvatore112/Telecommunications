@@ -1,0 +1,15 @@
+$TTL 86400
+@ IN SOA ns1.math.spbu. admin.math.spbu. (
+    2023052701 ; Serial
+    3600       ; Refresh
+    1800       ; Retry
+    604800     ; Expire
+    86400      ; Minimum TTL
+)
+
+@       IN NS   ns1.math.spbu.
+@       IN A    192.168.1.67
+ns1     IN A    192.168.1.67
+*       IN A    192.168.1.67
+@    IN    MX    10    mail
+mail IN    A    192.168.1.67
